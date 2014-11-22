@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://wyattzhang.github.io/atom.xml" rel="self"/>
   <link href="http://wyattzhang.github.io/"/>
-  <updated>2014-11-23T01:21:07+08:00</updated>
+  <updated>2014-11-23T01:33:03+08:00</updated>
   <id>http://wyattzhang.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -19,6 +19,50 @@
     <updated>2014-11-23T01:18:30+08:00</updated>
     <id>http://wyattzhang.github.io/blog/2014/11/23/first-post</id>
     <content type="html"><![CDATA[<h1>Test</h1>
+
+<p>&lsquo;&rsquo;&lsquo;//1.3 Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer NOTE: One or two additional variables are fine An extra copy of the array is not
+//  Write the test cases for this method</p>
+
+<p>func removeDuplicates(var str: [Character]) -> [Character] {
+let strLen = str.count
+if strLen &lt; 2 {
+return str
+}
+var tail = 1
+for i in 1..&lt;strLen {
+var j: Int
+for j = 0; j &lt; tail; ++j {
+if str[i] == str[j] {
+break
+}
+}
+if j == tail {
+str[tail] = str[i]
+++tail
+}
+}</p>
+
+<p>if tail &lt; str.count {
+str[tail] = &ldquo;\0&rdquo;
+}</p>
+
+<p>for var x = 0; x &lt; str.count; ++x {     // Remove characters after &ldquo;\0&rdquo;
+if str[x] == &ldquo;\0&rdquo; {
+let range = Range(start: x, end: str.count)
+str.removeRange(range)
+break
+}
+}</p>
+
+<p>return str
+}</p>
+
+<p>removeDuplicates(Array(&ldquo;abcd&rdquo;))
+removeDuplicates(Array(&ldquo;aaaa&rdquo;))
+removeDuplicates(Array(&ldquo;&rdquo;))
+removeDuplicates(Array(&ldquo;aaabbbcc&rdquo;))
+removeDuplicates(Array(&ldquo;abcabcabc&rdquo;))
+&lsquo;&rsquo;&#8217;</p>
 ]]></content>
   </entry>
   
