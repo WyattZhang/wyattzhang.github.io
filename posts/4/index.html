@@ -14,14 +14,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://wyattzhang.github.io">
+  <link rel="canonical" href="http://wyattzhang.github.io/posts/4">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="5QBox" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://wyattzhang.github.io">
+  <meta property="og:url" content="http://wyattzhang.github.io/posts/4">
   <meta property="og:title" content="5QBox">
   
 
@@ -114,89 +114,36 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-25T18:23:30+08:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-20T15:08:00+08:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-           | <a href="/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://wyattzhang.github.io/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1/" itemprop="url">Cracking the Coding interview&#8211;Q1.1</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description">
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-25T11:43:45+08:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
-        
-           | <a href="/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="http://wyattzhang.github.io/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift/">Comments</a>
+           | <a href="/blog/2014/11/20/my-00-post/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://wyattzhang.github.io/blog/2014/11/20/my-00-post/">Comments</a>
         
       </p>
     
     
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift/" itemprop="url">Solutions for Cracking the Coding Interview Written in Swift</a></h2>
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/11/20/my-00-post/" itemprop="url">My 00 Post</a></h2>
     
   </header>
 
 
-  <div class="entry-content clearfix" itemprop="articleBody description"><h1>前言</h1>
+  <div class="entry-content clearfix" itemprop="articleBody description"><h1>aaa</h1>
 
-<p>最近需要复习一下常用的数据结构和算法，又打算了解一下Apple新发布的Swift语言，于是便产生了用Swift把书中习题过一遍的想法。本文是《Cracking The Coding Interview, Fourth Edition》问题与解答的汇总，其中代码部分采用Swift编写。《Cracking The Coding Interview》是一本被许多人推荐的书，坊间也称为CTCI或CC150(与Leetcode150对应)， 详情可见：<a href="http://www.careercup.com/book">http://www.careercup.com/book</a> 。原书中答案大部分采用Java编写，我在用Swift做题的过程中除参(chao)考(xi)原书解答外还参(chao)考(xi)了<a href="http://www.hawstein.com/posts/ctci-solutions-contents.html">Hawstein的C++方案</a>，在此一并感谢。</p>
+<h2>aaa</h2>
 
-<h1>说明</h1>
+<h1>aaa</h1>
 
-<ul>
-<li>所有源码均托管在<a href="https://github.com/WyattZhang/CTCI">Github</a>，请毫不留情的Follow，Star，Watch，Fork，Issue及Pull Request;</li>
-<li>Swift结合Xcode playground后类似解释型脚本语言的特性非常适合验证算法及跟踪算法运行的过程，因此本文所有代码均为playground code snippet;</li>
-<li><code>.playground</code>push到Github会被拆分成三个文件，源码在<code>.swift</code>里，简单起见建议直接<code>git clone https://github.com/WyattZhang/CTCI.git .CTCI</code>后运行。</li>
-<li>Swift是一门新生语言，语法特性还不稳定，Apple的《The Swift Programing Language》从发布到我写这篇文章时一直在revision。一些几个月前的代码在Xcode更新到6.1后运行已经开始报错，需要改写。本文里的code snippet在发布时均在Xcode6.1的Playground里调试通过，如果未来运行报错，请首先去官网查看Swift的reference，确定是否由语法改变引起，然后留言给我或直接在Github提Issue和PR;</li>
-<li>部分代码使用了一些Swift新的语法特性，比如用tuple做swap<code>(a, b) = (b, a)</code>之类，具体到题目里会详细写出;</li>
-<li>如我的答案有错误或有其它更优的解法，欢迎讨论，这也是建立这个blog的初衷；如果碰巧对你还有了点帮助，请简单粗暴的感谢我。</li>
-<li><strong>最后，拜托转载请注明出处</strong>。</li>
-</ul>
+<p>-aaaa
+ -jaaa
+ adfiban</p>
 
+<p> adfaefa <code>a</code></p>
 
-<h1>目录</h1>
-
-<h2>Part1 : Data Structures</h2>
-
-<h3>Chapter 1 | Arrays and Strings</h3>
-
-<p>1.1 <a href="">Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?</a></p>
-
-</div>
+<p> </div>
   
   
     <footer>
-      <a class="btn btn-default" href="/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift/">继续阅读 &rarr;</a>
+      <a class="btn btn-default" href="/blog/2014/11/20/my-00-post/">继续阅读 &rarr;</a>
     </footer>
   
 
@@ -207,11 +154,11 @@
 
     <ul class="pager">
       
-        <li class="previous"><a href="/posts/2">&larr;&nbsp;Older</a></li>
+        <li class="previous disabled"><a href="#">&larr;&nbsp;Older</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-        <li class="next disabled"><a href="#">Newer&nbsp;&rarr;</a></li>
+        <li class="next"><a href="/posts/3">Newer&nbsp;&rarr;</a></li>
       
     </ul>
   </div>
