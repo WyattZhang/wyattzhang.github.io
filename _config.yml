@@ -13,8 +13,8 @@ description:
 # You can customize the format as defined in
 # http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
 # Additionally, %o will give you the ordinal representation of the day
-date_format: "ordinal"
-
+#date_format: "ordinal"
+date_format: "%F | %R | %A"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
@@ -42,7 +42,7 @@ rdiscount:
     - smart
 highlighter: pygments # default python pygments have been replaced by pygments.rb
 
-paginate: 2          # Posts per page on the blog index
+paginate: 10          # Posts per page on the blog index
 paginate_path: "/posts/:num"  # Directory base for pagination URLs eg. /posts/2/
 #paginate_path: "pagination_dir/"  # Directory base for pagination URLs eg. /posts/2/
 #paginate_path: "/:num"  # Directory base for pagination URLs eg. /posts/2/
