@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[5QBox]]></title>
-  <link href="http://wyattzhang.github.io/atom.xml" rel="self"/>
-  <link href="http://wyattzhang.github.io/"/>
-  <updated>2014-11-26T21:00:34+08:00</updated>
-  <id>http://wyattzhang.github.io/</id>
+  <link href="http://www.5qbox.com/atom.xml" rel="self"/>
+  <link href="http://www.5qbox.com/"/>
+  <updated>2014-11-26T21:11:52+08:00</updated>
+  <id>http://www.5qbox.com/</id>
   <author>
-    <name><![CDATA[5QBox]]></name>
+    <name><![CDATA[5Q]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Cracking the Coding interview--Q1.1]]></title>
-    <link href="http://wyattzhang.github.io/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1/"/>
+    <link href="http://www.5qbox.com/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1/"/>
     <updated>2014-11-25T18:23:30+08:00</updated>
-    <id>http://wyattzhang.github.io/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1</id>
+    <id>http://www.5qbox.com/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Solutions for Cracking the Coding Interview Written in Swift]]></title>
-    <link href="http://wyattzhang.github.io/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift/"/>
+    <link href="http://www.5qbox.com/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift/"/>
     <updated>2014-11-25T11:43:45+08:00</updated>
-    <id>http://wyattzhang.github.io/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift</id>
+    <id>http://www.5qbox.com/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift</id>
     <content type="html"><![CDATA[<h1>前言</h1>
 
 <p>最近需要复习一下常用的数据结构和算法，又打算了解一下Apple新发布的Swift语言，于是便产生了用Swift把书中习题过一遍的想法。本文是《Cracking The Coding Interview, Fourth Edition》问题与解答的汇总，其中代码部分采用Swift编写。《Cracking The Coding Interview》是一本被许多人推荐的书，坊间也称为CTCI或CC150(与Leetcode150对应)， 详情可见：<a href="http://www.careercup.com/book">http://www.careercup.com/book</a> 。原书中答案大部分采用Java编写，我在用Swift做题的过程中除参(chao)考(xi)原书解答外还参(chao)考(xi)了<a href="http://www.hawstein.com/posts/ctci-solutions-contents.html">Hawstein的C++方案</a>，在此一并感谢。</p>
@@ -63,9 +63,9 @@
   
   <entry>
     <title type="html"><![CDATA[Zombie Ninjas Attack: A Survivor's Retrospective]]></title>
-    <link href="http://wyattzhang.github.io/blog/2014/11/23/zombie-ninjas-attack-a-survivors-retrospective/"/>
+    <link href="http://www.5qbox.com/blog/2014/11/23/zombie-ninjas-attack-a-survivors-retrospective/"/>
     <updated>2014-11-23T21:21:42+08:00</updated>
-    <id>http://wyattzhang.github.io/blog/2014/11/23/zombie-ninjas-attack-a-survivors-retrospective</id>
+    <id>http://www.5qbox.com/blog/2014/11/23/zombie-ninjas-attack-a-survivors-retrospective</id>
     <content type="html"><![CDATA[<h1>test</h1>
 
 <p><code>a</code>
@@ -77,9 +77,9 @@
   
   <entry>
     <title type="html"><![CDATA[My 3 Blog]]></title>
-    <link href="http://wyattzhang.github.io/blog/2014/11/23/my-3-blog/"/>
+    <link href="http://www.5qbox.com/blog/2014/11/23/my-3-blog/"/>
     <updated>2014-11-23T02:56:10+08:00</updated>
-    <id>http://wyattzhang.github.io/blog/2014/11/23/my-3-blog</id>
+    <id>http://www.5qbox.com/blog/2014/11/23/my-3-blog</id>
     <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -119,9 +119,9 @@
   
   <entry>
     <title type="html"><![CDATA[Second Post]]></title>
-    <link href="http://wyattzhang.github.io/blog/2014/11/23/second-post/"/>
+    <link href="http://www.5qbox.com/blog/2014/11/23/second-post/"/>
     <updated>2014-11-23T01:18:30+08:00</updated>
-    <id>http://wyattzhang.github.io/blog/2014/11/23/second-post</id>
+    <id>http://www.5qbox.com/blog/2014/11/23/second-post</id>
     <content type="html"><![CDATA[<h1>Test</h1>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -228,9 +228,9 @@
   
   <entry>
     <title type="html"><![CDATA[First Post]]></title>
-    <link href="http://wyattzhang.github.io/blog/2014/11/23/first-post/"/>
+    <link href="http://www.5qbox.com/blog/2014/11/23/first-post/"/>
     <updated>2014-11-23T01:18:30+08:00</updated>
-    <id>http://wyattzhang.github.io/blog/2014/11/23/first-post</id>
+    <id>http://www.5qbox.com/blog/2014/11/23/first-post</id>
     <content type="html"><![CDATA[<h1>Test</h1>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -328,9 +328,9 @@
   
   <entry>
     <title type="html"><![CDATA[My 00 Post]]></title>
-    <link href="http://wyattzhang.github.io/blog/2014/11/20/my-00-post/"/>
+    <link href="http://www.5qbox.com/blog/2014/11/20/my-00-post/"/>
     <updated>2014-11-20T15:08:00+08:00</updated>
-    <id>http://wyattzhang.github.io/blog/2014/11/20/my-00-post</id>
+    <id>http://www.5qbox.com/blog/2014/11/20/my-00-post</id>
     <content type="html"><![CDATA[<h1>aaa</h1>
 
 <h2>aaa</h2>

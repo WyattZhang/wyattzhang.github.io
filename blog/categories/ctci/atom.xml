@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ctci | 5QBox]]></title>
-  <link href="http://wyattzhang.github.io/blog/categories/ctci/atom.xml" rel="self"/>
-  <link href="http://wyattzhang.github.io/"/>
-  <updated>2014-11-26T21:00:34+08:00</updated>
-  <id>http://wyattzhang.github.io/</id>
+  <link href="http://www.5qbox.com/blog/categories/ctci/atom.xml" rel="self"/>
+  <link href="http://www.5qbox.com/"/>
+  <updated>2014-11-26T21:11:52+08:00</updated>
+  <id>http://www.5qbox.com/</id>
   <author>
-    <name><![CDATA[5QBox]]></name>
+    <name><![CDATA[5Q]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Solutions for Cracking the Coding Interview Written in Swift]]></title>
-    <link href="http://wyattzhang.github.io/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift/"/>
+    <link href="http://www.5qbox.com/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift/"/>
     <updated>2014-11-25T11:43:45+08:00</updated>
-    <id>http://wyattzhang.github.io/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift</id>
+    <id>http://www.5qbox.com/blog/2014/11/25/solutions-for-cracking-the-coding-interview-written-in-swift</id>
     <content type="html"><![CDATA[<h1>前言</h1>
 
 <p>最近需要复习一下常用的数据结构和算法，又打算了解一下Apple新发布的Swift语言，于是便产生了用Swift把书中习题过一遍的想法。本文是《Cracking The Coding Interview, Fourth Edition》问题与解答的汇总，其中代码部分采用Swift编写。《Cracking The Coding Interview》是一本被许多人推荐的书，坊间也称为CTCI或CC150(与Leetcode150对应)， 详情可见：<a href="http://www.careercup.com/book">http://www.careercup.com/book</a> 。原书中答案大部分采用Java编写，我在用Swift做题的过程中除参(chao)考(xi)原书解答外还参(chao)考(xi)了<a href="http://www.hawstein.com/posts/ctci-solutions-contents.html">Hawstein的C++方案</a>，在此一并感谢。</p>
