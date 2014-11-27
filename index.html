@@ -140,13 +140,15 @@
 
   <div class="entry-content clearfix" itemprop="articleBody description"><h1>问题</h1>
 
-<p>Q1.3 Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer NOTE: One or two additional variables are fine An extra copy of the array is not.FOLLOW UPWrite the test cases for this method.</p>
+<p>Q1.3 Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer NOTE: One or two additional variables are fine An extra copy of the array is not.</p>
 
-<h1>解答</h1>
+<p>FOLLOW UP</p>
 
-<h3>方案一：</h3>
+<p>Write the test cases for this method.</p>
 
-<p>从第二个字符开始比较，如果和前面已存在的字符相同，就把该字符置空，最后截掉所有空字符。代码如下：</p>
+<h1>解法一：</h1>
+
+<p>从第二个字符开始比较，如果和前面已存在的字符相同，就把该字符置空，最后截掉所有空字符，时间复杂度为O(n<sup>2</sup>)。代码如下：</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -188,7 +190,7 @@
 </span><span class='line'>        <span class="k">return</span> <span class="n">str</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>    <span class="k">var</span> <span class="n">tail</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">1.</span><span class="p">.</span><span class="o">&lt;</span><span class="n">strLen</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span> <span class="p">..</span><span class="o">&lt;</span> <span class="n">strLen</span> <span class="p">{</span>
 </span><span class='line'>        <span class="k">var</span> <span class="nl">j</span><span class="p">:</span> <span class="n">Int</span>
 </span><span class='line'>        <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">tail</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span> <span class="p">{</span>
 </span><span class='line'>            <span class="k">if</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">str</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">{</span>
@@ -396,7 +398,7 @@
 
   <div class="entry-content clearfix" itemprop="articleBody description"><h1>前言</h1>
 
-<p>最近需要复习一下常用的数据结构和算法，又打算了解一下Apple新发布的Swift语言，于是便产生了用Swift把书中习题过一遍的想法。本文是《Cracking The Coding Interview, Fourth Edition》问题与解答的汇总，其中代码部分采用Swift编写。《Cracking The Coding Interview》是一本被许多人推荐的书，坊间也称为CTCI或CC150(与Leetcode150对应)， 详情可见：<a href="http://www.careercup.com/book">http://www.careercup.com/book</a> 。原书中答案大部分采用Java编写，我在用Swift做题的过程中除参(chao)考(xi)原书解答外还参(chao)考(xi)了<a href="http://www.hawstein.com/posts/ctci-solutions-contents.html">Hawstein的C++方案</a>，在此一并感谢。</p>
+<p>最近需要复习一下常用的数据结构和算法，又打算了解一下Apple新发布的Swift语言，于是便产生了用Swift把书中习题过一遍的想法。本文是《Cracking The Coding Interview, Fourth Edition》问题与解答的汇总，其中代码部分采用Swift编写。《Cracking The Coding Interview》是一本被许多人推荐的书，坊间也称为CTCI或CC150(与Leetcode150对应)， 详情可见：<a href="http://www.careercup.com/book">http://www.careercup.com/book</a> 。原书中解法大部分采用Java编写，我在用Swift解答的过程中除参(chao)考(xi)原书解法外还参(chao)考(xi)了<a href="http://www.hawstein.com/posts/ctci-solutions-contents.html">Hawstein的C++解法</a>，在此一并感谢。</p>
 
 <h1>说明</h1>
 

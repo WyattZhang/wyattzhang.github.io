@@ -139,13 +139,15 @@
 
 <div class="entry-content clearfix" itemprop="articleBody description"><h1>问题</h1>
 
-<p>Q1.3 Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer NOTE: One or two additional variables are fine An extra copy of the array is not.FOLLOW UPWrite the test cases for this method.</p>
+<p>Q1.3 Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer NOTE: One or two additional variables are fine An extra copy of the array is not.</p>
 
-<h1>解答</h1>
+<p>FOLLOW UP</p>
 
-<h3>方案一：</h3>
+<p>Write the test cases for this method.</p>
 
-<p>从第二个字符开始比较，如果和前面已存在的字符相同，就把该字符置空，最后截掉所有空字符。代码如下：</p>
+<h1>解法一：</h1>
+
+<p>从第二个字符开始比较，如果和前面已存在的字符相同，就把该字符置空，最后截掉所有空字符，时间复杂度为O(n<sup>2</sup>)。代码如下：</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -187,7 +189,7 @@
 </span><span class='line'>        <span class="k">return</span> <span class="n">str</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>    <span class="k">var</span> <span class="n">tail</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">1.</span><span class="p">.</span><span class="o">&lt;</span><span class="n">strLen</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span> <span class="p">..</span><span class="o">&lt;</span> <span class="n">strLen</span> <span class="p">{</span>
 </span><span class='line'>        <span class="k">var</span> <span class="nl">j</span><span class="p">:</span> <span class="n">Int</span>
 </span><span class='line'>        <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">tail</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span> <span class="p">{</span>
 </span><span class='line'>            <span class="k">if</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">str</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">{</span>

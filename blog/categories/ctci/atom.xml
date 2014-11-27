@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ctci | 5QBox]]></title>
   <link href="http://www.5qbox.com/blog/categories/ctci/atom.xml" rel="self"/>
   <link href="http://www.5qbox.com/"/>
-  <updated>2014-11-27T17:26:35+08:00</updated>
+  <updated>2014-11-27T17:54:01+08:00</updated>
   <id>http://www.5qbox.com/</id>
   <author>
     <name><![CDATA[5Q]]></name>
@@ -19,10 +19,15 @@
     <updated>2014-11-27T15:05:38+08:00</updated>
     <id>http://www.5qbox.com/blog/2014/11/27/cracking-the-coding-interview-q1-dot-3</id>
     <content type="html"><![CDATA[#问题
-Q1.3 Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer NOTE: One or two additional variables are fine An extra copy of the array is not.FOLLOW UPWrite the test cases for this method.
-#解答
-###方案一：
-从第二个字符开始比较，如果和前面已存在的字符相同，就把该字符置空，最后截掉所有空字符。代码如下：
+Q1.3 Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer NOTE: One or two additional variables are fine An extra copy of the array is not.
+
+FOLLOW UP
+
+Write the test cases for this method.
+
+#解法一：
+从第二个字符开始比较，如果和前面已存在的字符相同，就把该字符置空，最后截掉所有空字符，时间复杂度为O(n^2)。代码如下：
+
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -63,7 +68,7 @@ Q1.3 Design an algorithm and write code to remove the duplicate characters in a 
 </span><span class='line'>        <span class="k">return</span> <span class="n">str</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>    <span class="k">var</span> <span class="n">tail</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">1.</span><span class="p">.</span><span class="o">&lt;</span><span class="n">strLen</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span> <span class="p">..</span><span class="o">&lt;</span> <span class="n">strLen</span> <span class="p">{</span>
 </span><span class='line'>        <span class="k">var</span> <span class="nl">j</span><span class="p">:</span> <span class="n">Int</span>
 </span><span class='line'>        <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">tail</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span> <span class="p">{</span>
 </span><span class='line'>            <span class="k">if</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">str</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">{</span>
@@ -139,7 +144,7 @@ Q1.3 Design an algorithm and write code to remove the duplicate characters in a 
     <updated>2014-11-23T11:43:45+08:00</updated>
     <id>http://www.5qbox.com/blog/2014/11/23/solutions-for-cracking-the-coding-interview-written-in-swift</id>
     <content type="html"><![CDATA[#前言
-最近需要复习一下常用的数据结构和算法，又打算了解一下Apple新发布的Swift语言，于是便产生了用Swift把书中习题过一遍的想法。本文是《Cracking The Coding Interview, Fourth Edition》问题与解答的汇总，其中代码部分采用Swift编写。《Cracking The Coding Interview》是一本被许多人推荐的书，坊间也称为CTCI或CC150(与Leetcode150对应)， 详情可见：http://www.careercup.com/book 。原书中答案大部分采用Java编写，我在用Swift做题的过程中除参(chao)考(xi)原书解答外还参(chao)考(xi)了[Hawstein的C++方案](http://www.hawstein.com/posts/ctci-solutions-contents.html)，在此一并感谢。
+最近需要复习一下常用的数据结构和算法，又打算了解一下Apple新发布的Swift语言，于是便产生了用Swift把书中习题过一遍的想法。本文是《Cracking The Coding Interview, Fourth Edition》问题与解答的汇总，其中代码部分采用Swift编写。《Cracking The Coding Interview》是一本被许多人推荐的书，坊间也称为CTCI或CC150(与Leetcode150对应)， 详情可见：http://www.careercup.com/book 。原书中解法大部分采用Java编写，我在用Swift解答的过程中除参(chao)考(xi)原书解法外还参(chao)考(xi)了[Hawstein的C++解法](http://www.hawstein.com/posts/ctci-solutions-contents.html)，在此一并感谢。
 #说明
 + 所有源码均托管在[Github](https://github.com/WyattZhang/CTCI)，请毫不留情的Follow，Star，Watch，Fork，Issue及Pull Request;
 + Swift结合Xcode playground后类似解释型脚本语言的特性非常适合验证算法及跟踪算法运行的过程，因此本文所有代码均为playground code snippet;
