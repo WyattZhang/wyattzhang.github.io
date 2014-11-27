@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Solutions for Cracking The Coding Interview written in Swift"
-date: 2014-11-25 11:43:45 +0800
+date: 2014-11-23 11:43:45 +0800
 comments: true
 categories: [Algorithm, Swift, CTCI]
 ---
@@ -10,21 +10,20 @@ categories: [Algorithm, Swift, CTCI]
 #说明
 + 所有源码均托管在[Github](https://github.com/WyattZhang/CTCI)，请毫不留情的Follow，Star，Watch，Fork，Issue及Pull Request;
 + Swift结合Xcode playground后类似解释型脚本语言的特性非常适合验证算法及跟踪算法运行的过程，因此本文所有代码均为playground code snippet;
-+ `.playground`push到Github会被拆分成三个文件，源码在`.swift`里，简单起见建议直接`git clone https://github.com/WyattZhang/CTCI.git .CTCI`后运行。
++ `.playground`push到Github会被拆分成三个文件，源码在`.swift`里，简单起见建议直接`git clone`后运行。
 + Swift是一门新生语言，语法特性还不稳定，Apple的《The Swift Programing Language》从发布到我写这篇文章时一直在revision。一些几个月前的代码在Xcode更新到6.1后运行已经开始报错，需要改写。本文里的code snippet在发布时均在Xcode6.1的Playground里调试通过，如果未来运行报错，请首先去官网查看Swift的reference，确定是否由语法改变引起，然后留言给我或直接在Github提Issue和PR;
-+ 部分代码使用了一些Swift新的语法特性，比如用tuple做swap`(a, b) = (b, a)`之类，具体到题目里会详细写出;
-+ 如我的答案有错误或有其它更优的解法，欢迎讨论，这也是建立这个blog的初衷；如果碰巧对你还有了点帮助，请简单粗暴的感谢我。
-+ __最后，拜托转载请注明出处__。
-
-
++ 部分代码使用了一些Swift新特性，如用tuple做swap`(a, b) = (b, a)`,用`advance()`模拟C的字符指针等，具体到题目里会详细写出;
++ 如我的答案有错误或有其它更优的解法，欢迎讨论，[这也是建立这个blog的初衷]()；如果碰巧对你还有了点帮助，请简单粗暴的感谢我。
 
 #目录
 ##Part1 : Data Structures
 ### Chapter 1 | Arrays and Strings
-1.1 [Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?]()
-<!-- more -->
-1.2 [Write code to reverse a C-Style String (C-String means that “abcd” is represented as five characters, including the null character )]()
+1.1 [Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?]({% post_url 2014-11-25-cracking-the-coding-interview-q1-dot-1 %})
 
-1.3 [Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer. NOTE: One or two additional variables are fine. An extra copy of the array is not. FOLLOW UP Write the test cases for this method.]() 
+<!-- more -->
+
+1.2 [Write code to reverse a C-Style String (C-String means that “abcd” is represented as five characters, including the null character )]({% post_url 2014-11-26-cracking-the-coding-interview-q1-dot-2 %})
+
+1.3 [Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer. NOTE: One or two additional variables are fine. An extra copy of the array is not. FOLLOW UP Write the test cases for this method.]({% post_url 2014-11-27-cracking-the-coding-interview-q1-dot-3 %}) 
 
 
