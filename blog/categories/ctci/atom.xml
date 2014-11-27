@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ctci | 5QBox]]></title>
   <link href="http://www.5qbox.com/blog/categories/ctci/atom.xml" rel="self"/>
   <link href="http://www.5qbox.com/"/>
-  <updated>2014-11-27T15:40:48+08:00</updated>
+  <updated>2014-11-27T17:26:35+08:00</updated>
   <id>http://www.5qbox.com/</id>
   <author>
     <name><![CDATA[5Q]]></name>
@@ -12,6 +12,110 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cracking the Coding Interview Q1.3]]></title>
+    <link href="http://www.5qbox.com/blog/2014/11/27/cracking-the-coding-interview-q1-dot-3/"/>
+    <updated>2014-11-27T15:05:38+08:00</updated>
+    <id>http://www.5qbox.com/blog/2014/11/27/cracking-the-coding-interview-q1-dot-3</id>
+    <content type="html"><![CDATA[#问题
+Q1.3 Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer NOTE: One or two additional variables are fine An extra copy of the array is not.FOLLOW UPWrite the test cases for this method.
+#解答
+###方案一：
+从第二个字符开始比较，如果和前面已存在的字符相同，就把该字符置空，最后截掉所有空字符。代码如下：
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="n">removeDuplicates1</span><span class="p">(</span><span class="k">var</span> <span class="nl">str</span><span class="p">:</span> <span class="p">[</span><span class="n">Character</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">Character</span><span class="p">]</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">let</span> <span class="n">strLen</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">strLen</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">str</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">tail</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">1.</span><span class="p">.</span><span class="o">&lt;</span><span class="n">strLen</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">var</span> <span class="nl">j</span><span class="p">:</span> <span class="n">Int</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">tail</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">str</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">{</span>
+</span><span class='line'>                <span class="k">break</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">tail</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">str</span><span class="p">[</span><span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span class='line'>            <span class="o">++</span><span class="n">tail</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="n">tail</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">str</span><span class="p">[</span><span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="se">\0</span><span class="s">&quot;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span> <span class="k">var</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span><span class="p">;</span> <span class="o">++</span><span class="n">x</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">str</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;</span><span class="se">\0</span><span class="s">&quot;</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">let</span> <span class="n">range</span> <span class="o">=</span> <span class="n">Range</span><span class="p">(</span><span class="nl">start</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="nl">end</span><span class="p">:</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">str</span><span class="p">.</span><span class="n">removeRange</span><span class="p">(</span><span class="n">range</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">break</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="n">str</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+测试用例：注:`Array(&#8220;String&#8221;)`的作用是将String转换为Character数组
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;abcd&quot;</span><span class="p">))</span>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;aaaa&quot;</span><span class="p">))</span>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;aaabbbcc&quot;</span><span class="p">))</span>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;abcabcabc&quot;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+
+
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cracking the Coding Interview Q1.2]]></title>
@@ -39,15 +143,15 @@
 #说明
 + 所有源码均托管在[Github](https://github.com/WyattZhang/CTCI)，请毫不留情的Follow，Star，Watch，Fork，Issue及Pull Request;
 + Swift结合Xcode playground后类似解释型脚本语言的特性非常适合验证算法及跟踪算法运行的过程，因此本文所有代码均为playground code snippet;
-+ `.playground`push到Github会被拆分成三个文件，源码在`.swift`里，简单起见建议直接`git clone`后运行。
++ `.playground`文件实际是一个package，push到Github后会被拆分成三个文件，源码在`.swift`里，简单起见建议直接`git clone`整个项目后运行。
 + Swift是一门新生语言，语法特性还不稳定，Apple的《The Swift Programing Language》从发布到我写这篇文章时一直在revision。一些几个月前的代码在Xcode更新到6.1后运行已经开始报错，需要改写。本文里的code snippet在发布时均在Xcode6.1的Playground里调试通过，如果未来运行报错，请首先去官网查看Swift的reference，确定是否由语法改变引起，然后留言给我或直接在Github提Issue和PR;
 + 部分代码使用了一些Swift新特性，如用tuple做swap`(a, b) = (b, a)`,用`advance()`模拟C的字符指针等，具体到题目里会详细写出;
-+ 如我的答案有错误或有其它更优的解法，欢迎讨论，[这也是建立这个blog的初衷]()；如果碰巧对你还有了点帮助，请简单粗暴的感谢我。
++ 如我的答案有错误或有其它更优的解法，欢迎讨论，[这也是建立这个blog的初衷](/blog/2014/11/22/hello-octopress/)；如果碰巧对你还有了点帮助，请简单粗暴的感谢我。
 
 #目录
 ##Part1 : Data Structures
 ### Chapter 1 | Arrays and Strings
-1.1 [Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?](/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1/)
+1.1 [Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?](/blog/2014/11/22/hello-octopress/)
 
 <!-- more -->
 
