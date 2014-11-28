@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Swift | 5QBox]]></title>
   <link href="http://www.5qbox.com/blog/categories/swift/atom.xml" rel="self"/>
   <link href="http://www.5qbox.com/"/>
-  <updated>2014-11-28T18:04:07+08:00</updated>
+  <updated>2014-11-28T22:59:49+08:00</updated>
   <id>http://www.5qbox.com/</id>
   <author>
     <name><![CDATA[5Q]]></name>
@@ -163,7 +163,7 @@ Write the test cases for this method.
     <link href="http://www.5qbox.com/blog/2014/11/24/quicksort-written-in-swift/"/>
     <updated>2014-11-24T15:20:40+08:00</updated>
     <id>http://www.5qbox.com/blog/2014/11/24/quicksort-written-in-swift</id>
-    <content type="html"><![CDATA[Quicksort是最常用的一种排序算法，很多语言内置的sort函数都是使用quicksort算法(或其改进，如Java7)。
+    <content type="html"><![CDATA[Quicksort是一种常用的排序算法，很多语言内置的sort函数都是使用quicksort算法(或其改进，如Java7)。
 
 >From Wikipedia : [Quicksort](http://en.wikipedia.org/wiki/Quicksort)
 
