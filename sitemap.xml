@@ -16,7 +16,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://www.5qbox.com/blog/2014/11/24/quick-sort-written-in-swift/</loc>
+    <loc>http://www.5qbox.com/blog/2014/11/24/quicksort-written-in-swift/</loc>
     <lastmod>2014-11-24T15:20:40+08:00</lastmod>
     <priority>0.8</priority>
   </url>
@@ -32,13 +32,13 @@
   </url>
   <url>
     <loc>http://www.5qbox.com/blog/archives/</loc>
-    <lastmod>2014-11-27T17:54:01+08:00</lastmod>
+    <lastmod>2014-11-28T10:33:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://www.5qbox.com/</loc>
-    <lastmod>2014-11-27T17:54:01+08:00</lastmod>
+    <lastmod>2014-11-28T10:33:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

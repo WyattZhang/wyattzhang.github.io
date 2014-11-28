@@ -209,7 +209,7 @@
 </span><span class='line'>
 </span><span class='line'>    <span class="k">for</span> <span class="k">var</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span><span class="p">;</span> <span class="o">++</span><span class="n">x</span> <span class="p">{</span>
 </span><span class='line'>        <span class="k">if</span> <span class="n">str</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;</span><span class="se">\0</span><span class="s">&quot;</span> <span class="p">{</span>
-</span><span class='line'>            <span class="k">let</span> <span class="n">range</span> <span class="o">=</span> <span class="n">Range</span><span class="p">(</span><span class="nl">start</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="nl">end</span><span class="p">:</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">let</span> <span class="n">range</span> <span class="o">=</span> <span class="n">Range</span><span class="p">(</span><span class="nl">start</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="nl">end</span><span class="p">:</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span><span class="p">)</span>
 </span><span class='line'>            <span class="n">str</span><span class="p">.</span><span class="n">removeRange</span><span class="p">(</span><span class="n">range</span><span class="p">)</span>
 </span><span class='line'>            <span class="k">break</span>
 </span><span class='line'>        <span class="p">}</span>
@@ -220,7 +220,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>测试用例：注:<code>Array("String")</code>的作用是将String转换为Character数组</p>
+<p>测试用例：注:<code>Array("string")</code>的作用是将string转换为Character数组</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -228,11 +228,14 @@
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;abcd&quot;</span><span class="p">))</span>
-</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;aaaa&quot;</span><span class="p">))</span>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;AAAAaaaa&quot;</span><span class="p">))</span>
 </span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">))</span>
 </span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;aaabbbcc&quot;</span><span class="p">))</span>
 </span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;abcabcabc&quot;</span><span class="p">))</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more -->
 
 
 
@@ -314,7 +317,7 @@
     
     <a class="list-group-item " href="/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1/">Cracking the Coding Interview Q1.1</a>
     
-    <a class="list-group-item " href="/blog/2014/11/24/quick-sort-written-in-swift/">Quick Sort Written in Swift</a>
+    <a class="list-group-item " href="/blog/2014/11/24/quicksort-written-in-swift/">Quicksort Written in Swift</a>
     
     <a class="list-group-item " href="/blog/2014/11/23/solutions-for-cracking-the-coding-interview-written-in-swift/">Solutions for Cracking the Coding Interview Written in Swift</a>
     
