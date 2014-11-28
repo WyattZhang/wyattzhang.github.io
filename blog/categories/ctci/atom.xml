@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ctci | 5QBox]]></title>
   <link href="http://www.5qbox.com/blog/categories/ctci/atom.xml" rel="self"/>
   <link href="http://www.5qbox.com/"/>
-  <updated>2014-11-28T10:33:34+08:00</updated>
+  <updated>2014-11-28T18:04:07+08:00</updated>
   <id>http://www.5qbox.com/</id>
   <author>
     <name><![CDATA[5Q]]></name>
@@ -26,7 +26,7 @@ FOLLOW UP
 Write the test cases for this method.
 
 #解法一：
-从第二个字符开始比较，如果和前面已存在的字符相同，就把该字符置空，最后截掉所有空字符，时间复杂度为O(n^2)。代码如下：
+从第二个字符开始比较，如果和前面已存在的字符相同，就把该字符置空，最后截掉空字符及其后续字符，时间复杂度为O(n^2)。代码如下：
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -58,14 +58,10 @@ Write the test cases for this method.
 <span class='line-number'>28</span>
 <span class='line-number'>29</span>
 <span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="n">removeDuplicates1</span><span class="p">(</span><span class="k">var</span> <span class="nl">str</span><span class="p">:</span> <span class="p">[</span><span class="n">Character</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">Character</span><span class="p">]</span> <span class="p">{</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="nf">removeDuplicates1</span><span class="p">(</span><span class="k">inout</span> <span class="nl">str</span><span class="p">:</span> <span class="p">[</span><span class="n">Character</span><span class="p">])</span> <span class="p">{</span>
 </span><span class='line'>    <span class="k">let</span> <span class="n">strLen</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span>
 </span><span class='line'>    <span class="k">if</span> <span class="n">strLen</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">str</span>
+</span><span class='line'>        <span class="k">return</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>    <span class="k">var</span> <span class="n">tail</span> <span class="o">=</span> <span class="mi">1</span>
 </span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span> <span class="p">..</span><span class="o">&lt;</span> <span class="n">strLen</span> <span class="p">{</span>
@@ -80,21 +76,17 @@ Write the test cases for this method.
 </span><span class='line'>            <span class="o">++</span><span class="n">tail</span>
 </span><span class='line'>        <span class="p">}</span>
 </span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
 </span><span class='line'>    <span class="k">if</span> <span class="n">tail</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span> <span class="p">{</span>
 </span><span class='line'>        <span class="n">str</span><span class="p">[</span><span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="se">\0</span><span class="s">&quot;</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="k">var</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span><span class="p">;</span> <span class="o">++</span><span class="n">x</span> <span class="p">{</span>
+</span><span class='line'>   <span class="k">for</span> <span class="k">var</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span><span class="p">;</span> <span class="o">++</span><span class="n">x</span> <span class="p">{</span>
 </span><span class='line'>        <span class="k">if</span> <span class="n">str</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;</span><span class="se">\0</span><span class="s">&quot;</span> <span class="p">{</span>
 </span><span class='line'>            <span class="k">let</span> <span class="n">range</span> <span class="o">=</span> <span class="n">Range</span><span class="p">(</span><span class="nl">start</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="nl">end</span><span class="p">:</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span><span class="p">)</span>
 </span><span class='line'>            <span class="n">str</span><span class="p">.</span><span class="n">removeRange</span><span class="p">(</span><span class="n">range</span><span class="p">)</span>
 </span><span class='line'>            <span class="k">break</span>
 </span><span class='line'>        <span class="p">}</span>
 </span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">str</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 测试用例：注:`Array(&#8220;string&#8221;)`的作用是将string转换为Character数组
@@ -103,14 +95,38 @@ Write the test cases for this method.
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;abcd&quot;</span><span class="p">))</span>
-</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;AAAAaaaa&quot;</span><span class="p">))</span>
-</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">))</span>
-</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;aaabbbcc&quot;</span><span class="p">))</span>
-</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;abcabcabc&quot;</span><span class="p">))</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">var</span> <span class="n">testCase1_1</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;abcd&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="k">var</span> <span class="n">testCase1_2</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;AAaaaa&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="k">var</span> <span class="n">testCase1_3</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="k">var</span> <span class="n">testCase1_4</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;aaabbbcc&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="k">var</span> <span class="n">testCase1_5</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;abcabcabc&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">testCase1_1</span><span class="p">)</span>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">testCase1_2</span><span class="p">)</span>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">testCase1_3</span><span class="p">)</span>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">testCase1_4</span><span class="p">)</span>
+</span><span class='line'><span class="n">removeDuplicates1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">testCase1_5</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">testCase1_1</span>
+</span><span class='line'><span class="n">testCase1_2</span>
+</span><span class='line'><span class="n">testCase1_3</span>
+</span><span class='line'><span class="n">testCase1_4</span>
+</span><span class='line'><span class="n">testCase1_5</span>
 </span></code></pre></td></tr></table></div></figure>
 <!-- more -->
-
+#解法二：
 
 
 
