@@ -5,7 +5,7 @@ date: 2014-11-24 15:20:40 +0800
 comments: true
 categories: [algorithm, swift]
 ---
-Quicksort是最常用的一种排序算法，很多语言内置的sort函数都是使用quicksort算法(或其改进，如Java7)。
+Quicksort是一种常用的排序算法，很多语言内置的sort函数都是使用quicksort算法(或其改进，如Java7)。
 
 >From Wikipedia : [Quicksort](http://en.wikipedia.org/wiki/Quicksort)
 
