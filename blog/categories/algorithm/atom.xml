@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithm | 5QBox]]></title>
   <link href="http://www.5qbox.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://www.5qbox.com/"/>
-  <updated>2014-11-30T16:05:05+08:00</updated>
+  <updated>2014-12-21T22:04:20+08:00</updated>
   <id>http://www.5qbox.com/</id>
   <author>
     <name><![CDATA[5Q]]></name>
@@ -155,7 +155,51 @@ Write the test cases for this method.
     <link href="http://www.5qbox.com/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1/"/>
     <updated>2014-11-25T18:23:30+08:00</updated>
     <id>http://www.5qbox.com/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1</id>
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[#问题
+Q1.1 Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?
+
+实现一个算法来判断一个字符串中的字符是否唯一，不能使用额外的数据结构。 (即只使用基本的数据结构)
+
+#解法一：
+简单起见我们假设字符串中的字符属于ASCII字符集(其它字符集类似)，那么我们建立一个256元素的Bool数组，并全部初始化为false。遍历字符串中的字符，当字符编码所对应的数组元素为true时，说明存在重复字符，否则将该对应位置的数组元素标记为true。
+
+**注：Swift里Char和String均为Unicode，这点和C++不同，所以遍历字符串中的字符时需要使用`for char in str.unicodeScalars`，并且需要将Char类型的value强制转换为Int `Int(char.value)`来对应Bool数组的下标。**
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="n">isUniqueChar1</span><span class="p">(</span><span class="nl">str</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Bool</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">char_set</span> <span class="o">=</span> <span class="p">[</span><span class="n">Bool</span><span class="p">](</span><span class="nl">count</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span> <span class="nl">repeatedValue</span><span class="p">:</span> <span class="nb">false</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">for</span> <span class="kt">char</span> <span class="k">in</span> <span class="n">str</span><span class="p">.</span><span class="n">unicodeScalars</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">char_set</span><span class="p">[</span><span class="n">Int</span><span class="p">(</span><span class="kt">char</span><span class="p">.</span><span class="n">value</span><span class="p">)]</span> <span class="o">==</span> <span class="nb">true</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">return</span> <span class="nb">false</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">char_set</span><span class="p">[</span><span class="n">Int</span><span class="p">(</span><span class="kt">char</span><span class="p">.</span><span class="n">value</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">true</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nb">true</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="n">isUniqueChar1</span><span class="p">(</span><span class="s">&quot;abcd&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">isUniqueChar1</span><span class="p">(</span><span class="s">&quot;abcdd&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+
+-
+**完整的题解目录：[Solutions for Cracking The Coding Interview Written in Swift](/blog/2014/11/23/solutions-for-cracking-the-coding-interview-written-in-swift/)**
+
+**全部代码托管在Github：https://github.com/WyattZhang/CTCI**]]></content>
   </entry>
   
   <entry>
