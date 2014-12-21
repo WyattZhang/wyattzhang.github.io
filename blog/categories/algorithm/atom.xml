@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithm | 5QBox]]></title>
   <link href="http://www.5qbox.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://www.5qbox.com/"/>
-  <updated>2014-12-21T22:04:20+08:00</updated>
+  <updated>2014-12-21T22:14:08+08:00</updated>
   <id>http://www.5qbox.com/</id>
   <author>
     <name><![CDATA[5Q]]></name>
@@ -177,6 +177,7 @@ Q1.1 Implement an algorithm to determine if a string has all unique characters W
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
+<span class='line-number'>13</span>
 </pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="n">isUniqueChar1</span><span class="p">(</span><span class="nl">str</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Bool</span> <span class="p">{</span>
 </span><span class='line'>    <span class="k">var</span> <span class="n">char_set</span> <span class="o">=</span> <span class="p">[</span><span class="n">Bool</span><span class="p">](</span><span class="nl">count</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span> <span class="nl">repeatedValue</span><span class="p">:</span> <span class="nb">false</span><span class="p">)</span>
 </span><span class='line'>    <span class="k">for</span> <span class="kt">char</span> <span class="k">in</span> <span class="n">str</span><span class="p">.</span><span class="n">unicodeScalars</span> <span class="p">{</span>
@@ -187,6 +188,7 @@ Q1.1 Implement an algorithm to determine if a string has all unique characters W
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>    <span class="k">return</span> <span class="nb">true</span>
 </span><span class='line'><span class="p">}</span>
+</span><span class='line'>
 </span><span class='line'><span class="n">isUniqueChar1</span><span class="p">(</span><span class="s">&quot;abcd&quot;</span><span class="p">)</span>
 </span><span class='line'><span class="n">isUniqueChar1</span><span class="p">(</span><span class="s">&quot;abcdd&quot;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -196,10 +198,11 @@ Q1.1 Implement an algorithm to determine if a string has all unique characters W
 
 
 
--
-**完整的题解目录：[Solutions for Cracking The Coding Interview Written in Swift](/blog/2014/11/23/solutions-for-cracking-the-coding-interview-written-in-swift/)**
+&#8212;
 
-**全部代码托管在Github：https://github.com/WyattZhang/CTCI**]]></content>
+**完整的解题目录：[Solutions for Cracking The Coding Interview Written in Swift](/blog/2014/11/23/solutions-for-cracking-the-coding-interview-written-in-swift/)**
+
+**全部代码托管在Github：[https://github.com/WyattZhang/CTCI](https://github.com/WyattZhang/CTCI)**]]></content>
   </entry>
   
   <entry>
@@ -388,7 +391,7 @@ Swift语言引入了泛型，下面是一个泛型版本的quicksort代码：
 ##Part1 : Data Structures
 ===
 ### Chapter 1 | Arrays and Strings
-1.1 [Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?](/blog/2014/11/22/hello-octopress/)
+1.1 [Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?](/blog/2014/11/25/cracking-the-coding-interview-q1-dot-1/)
 
 1.2 [Write code to reverse a C-Style String (C-String means that “abcd” is represented as five characters, including the null character )](/blog/2014/11/26/cracking-the-coding-interview-q1-dot-2/)
 
