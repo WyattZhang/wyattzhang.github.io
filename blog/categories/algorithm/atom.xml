@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithm | 5QBox]]></title>
   <link href="http://www.5qbox.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://www.5qbox.com/"/>
-  <updated>2014-12-24T16:01:23+08:00</updated>
+  <updated>2014-12-24T16:06:23+08:00</updated>
   <id>http://www.5qbox.com/</id>
   <author>
     <name><![CDATA[5Q]]></name>
@@ -195,7 +195,7 @@ Q1.1 Implement an algorithm to determine if a string has all unique characters W
 
 #解法二
 
-解法二与解法一类似，只是将用Bool数组来表示是否出现过重复改成了用位运算，减少了一些空间使用量，本质并没有区别。我使用的是`MBA2013Mid Core i5 64bit CPU`所以`Int = Int64`(Swift里也可以用sizeof(Int)查看，`sizeof(Int) = sizeof(Int64) = 8 bytes`)，256个字符就只需要使用4个Int64来记录。代码如下：
+解法二与解法一类似，只是将用Bool数组来表示是否出现过重复改成了用位运算，减少了一些空间使用量，本质并没有区别。我使用的MBA2013mid是Core i5 64bit CPU所以`Int = Int64`(Swift同样可以用sizeof()查看，`sizeof(Int) = sizeof(Int64) = 8 bytes`)，256个字符就只需要使用4个Int64来记录。代码如下：
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

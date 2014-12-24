@@ -378,7 +378,7 @@
 
 <h1>解法二</h1>
 
-<p>解法二与解法一类似，只是将用Bool数组来表示是否出现过重复改成了用位运算，减少了一些空间使用量，本质并没有区别。我使用的是<code>MBA2013Mid Core i5 64bit CPU</code>所以<code>Int = Int64</code>(Swift里也可以用sizeof(Int)查看，<code>sizeof(Int) = sizeof(Int64) = 8 bytes</code>)，256个字符就只需要使用4个Int64来记录。代码如下：</p>
+<p>解法二与解法一类似，只是将用Bool数组来表示是否出现过重复改成了用位运算，减少了一些空间使用量，本质并没有区别。我使用的MBA2013mid是Core i5 64bit CPU所以<code>Int = Int64</code>(Swift同样可以用sizeof()查看，<code>sizeof(Int) = sizeof(Int64) = 8 bytes</code>)，256个字符就只需要使用4个Int64来记录。代码如下：</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
