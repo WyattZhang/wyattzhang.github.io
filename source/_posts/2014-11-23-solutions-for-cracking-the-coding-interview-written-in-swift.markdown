@@ -19,7 +19,7 @@ categories: [Algorithm, Swift, CTCI]
 ##Part1 : Data Structures
 ===
 ### Chapter 1 | Arrays and Strings
-1.1 [Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?]({% post_url 2014-11-22-hello-octopress %})
+1.1 [Implement an algorithm to determine if a string has all unique characters What if you can not use additional data structures?]({% post_url 2014-11-25-cracking-the-coding-interview-q1-dot-1 %})
 
 1.2 [Write code to reverse a C-Style String (C-String means that “abcd” is represented as five characters, including the null character )]({% post_url 2014-11-26-cracking-the-coding-interview-q1-dot-2 %})
 
