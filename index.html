@@ -343,7 +343,7 @@
 
 <h1>解法一：</h1>
 
-<p>简单起见我们假设字符串中的字符属于ASCII字符集(其它字符集类似)，那么我们建立一个256元素的Bool数组，并全部初始化为false。遍历字符串中的字符，当字符编码所对应的数组元素为true时，说明存在重复字符，否则将该对应位置的数组元素标记为true。</p>
+<p>简单起见我们假设字符串中的字符属于ASCII字符集(其它字符集类似)，那么我们建立一个256元素的Bool数组，并全部初始化为false。遍历字符串中的字符，当字符编码所对应的数组元素为true时，说明存在重复字符，否则将该对应位置的数组元素标记为true。算法时间复杂度为O(n)。</p>
 
 <p><strong>注：Swift里Char和String均为Unicode，这点和C++不同，所以遍历字符串中的字符时需要使用<code>for char in str.unicodeScalars</code>，并且需要将Char类型的value强制转换为Int <code>Int(char.value)</code>来对应Bool数组的下标。</strong></p>
 
@@ -373,6 +373,43 @@
 </span><span class='line'>
 </span><span class='line'><span class="n">isUniqueChar1</span><span class="p">(</span><span class="s">&quot;abcd&quot;</span><span class="p">)</span>
 </span><span class='line'><span class="n">isUniqueChar1</span><span class="p">(</span><span class="s">&quot;abcdd&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>解法二</h1>
+
+<p>解法二与解法一类似，只是将用Bool数组来表示是否出现过重复改成了用位运算，减少了一些空间使用量，本质并没有区别。我使用的是<code>MBA2013Mid Core i5 64bit CPU</code>所以<code>Int = Int64</code>(Swift里也可以用sizeof(Int)查看，<code>sizeof(Int) = sizeof(Int64) = 8 bytes</code>)，256个字符就只需要使用4个Int64来记录。代码如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="n">isUniqueChar2</span><span class="p">(</span><span class="nl">str</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Bool</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="n">Int</span><span class="p">](</span><span class="nl">count</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nl">repeatedValue</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// 4 * 64bit = 256</span>
+</span><span class='line'>    <span class="k">for</span> <span class="kt">char</span> <span class="k">in</span> <span class="n">str</span><span class="p">.</span><span class="n">unicodeScalars</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">var</span> <span class="nl">idx</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="kt">char</span><span class="p">.</span><span class="n">value</span> <span class="o">/</span> <span class="mi">64</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">var</span> <span class="n">shift</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="kt">char</span><span class="p">.</span><span class="n">value</span> <span class="o">%</span> <span class="mi">64</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">shift</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">return</span> <span class="nb">false</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">array</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">shift</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nb">true</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">isUniqueChar2</span><span class="p">(</span><span class="s">&quot;abcd&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">isUniqueChar2</span><span class="p">(</span><span class="s">&quot;abccd&quot;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
