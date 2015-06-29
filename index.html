@@ -252,12 +252,13 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
+<hr />
+
+<p><strong>完整的解题目录：<a href="/blog/2014/11/23/solutions-for-cracking-the-coding-interview-written-in-swift/">Solutions for Cracking The Coding Interview Written in Swift</a></strong></p>
+
+<p><strong>全部代码托管在Github：<a href="https://github.com/WyattZhang/CTCI">https://github.com/WyattZhang/CTCI</a></strong></p>
 </div>
   
-  
-    <footer>
-      <a class="btn btn-default" href="/blog/2014/11/27/cracking-the-coding-interview-q1-dot-3/">继续阅读 &rarr;</a>
-    </footer>
   
 
 
@@ -295,7 +296,119 @@
   </header>
 
 
-  <div class="entry-content clearfix" itemprop="articleBody description">
+  <div class="entry-content clearfix" itemprop="articleBody description"><h1>问题</h1>
+
+<p>Q1.2 Write code to reverse a C-Style String. (C-String means that “abcd” is represented as five characters, including the null character.)</p>
+
+<h1>解法一：</h1>
+
+<p>备注: 由于Swift的String类型结束没有&#8217;\0&#8217;，为了模拟C Style String，使用了&#8217;N&#8217;来代替,下同。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="n">reverse1</span><span class="p">(</span><span class="nl">str</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">String</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">revStr</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+</span><span class='line'>    <span class="k">for</span> <span class="kt">char</span> <span class="k">in</span> <span class="n">str</span> <span class="p">{</span>
+</span><span class='line'>        <span class="o">++</span><span class="n">end</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="o">--</span><span class="n">end</span>
+</span><span class='line'>    <span class="k">for</span> <span class="p">;</span> <span class="n">end</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">end</span><span class="o">--</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">revStr</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="n">str</span><span class="p">)[</span><span class="n">end</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">revStr</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;N&quot;</span> <span class="kt">as</span> <span class="n">Character</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">revStr</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>解法二：</h1>
+
+<p>在Swift中String类型是传值而非传引用，解法二使用了Swift中的Character数组来模拟C-Style的Char Array。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="n">reverse2</span><span class="p">(</span><span class="k">var</span> <span class="nl">str</span><span class="p">:</span> <span class="p">[</span><span class="n">Character</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">Character</span><span class="p">]</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">str</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">end</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="k">for</span> <span class="p">;</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">;</span> <span class="n">end</span><span class="o">--</span> <span class="p">{</span>
+</span><span class='line'><span class="c1">//        var tmp = str[start]         // standard swap func</span>
+</span><span class='line'><span class="c1">//        str[start] = str[end]</span>
+</span><span class='line'><span class="c1">//        str[end] = tmp</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">start</span><span class="p">],</span> <span class="n">str</span><span class="p">[</span><span class="n">end</span><span class="p">])</span> <span class="o">=</span> <span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">end</span><span class="p">],</span> <span class="n">str</span><span class="p">[</span><span class="n">start</span><span class="p">])</span>  <span class="c1">// use tuple in swift for swapping</span>
+</span><span class='line'>        <span class="n">start</span><span class="o">++</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">str</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>解法三：</h1>
+
+<p>使用递归</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="k">func</span> <span class="n">reverse3</span><span class="p">(</span><span class="k">var</span> <span class="nl">str</span><span class="p">:</span> <span class="p">[</span><span class="n">Character</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">Character</span><span class="p">]</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">revStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">Character</span><span class="p">]()</span>
+</span><span class='line'>    <span class="k">for</span> <span class="k">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">revStr</span> <span class="o">=</span> <span class="s">&quot;\(str[i])&quot;</span> <span class="o">+</span> <span class="n">revStr</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">revStr</span> <span class="o">+</span> <span class="s">&quot;N&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>测试用例</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='swift'><span class='line'><span class="n">reverse</span><span class="p">(</span><span class="s">&quot;abcd12345N&quot;</span><span class="p">)</span>    <span class="c1">// built-in Swift function</span>
+</span><span class='line'><span class="n">reverse1</span><span class="p">(</span><span class="s">&quot;abcd12345N&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">reverse2</span><span class="p">(</span><span class="s">&quot;abcd12345N&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">reverse3</span><span class="p">(</span><span class="s">&quot;abcd12345N&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<p><strong>完整的解题目录：<a href="/blog/2014/11/23/solutions-for-cracking-the-coding-interview-written-in-swift/">Solutions for Cracking The Coding Interview Written in Swift</a></strong></p>
+
+<p><strong>全部代码托管在Github：<a href="https://github.com/WyattZhang/CTCI">https://github.com/WyattZhang/CTCI</a></strong></p>
 </div>
   
   
@@ -773,7 +886,7 @@ Quicksort, or partition-exchange sort, is a sorting algorithm developed by Tony 
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2014 - 5Q | 所有内容采用<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons</a>协议授权 | 转载请注明作者及出处 |
+  Copyright &copy; 2015 - 5Q | 所有内容采用<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons</a>协议授权 | 转载请注明作者及出处 |
      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
       <span class="credit"> with <a href="https://github.com/kAworu/octostrap3">Octostrap3</a></span>
 </p>
