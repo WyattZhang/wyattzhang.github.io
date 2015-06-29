@@ -48,6 +48,7 @@ func removeDuplicates1(inout str: [Character]) {
 }
 ```
 测试用例：注:`Array("string")`的作用是将string转换为Character数组
+
 ```swift
 var testCase1_1 = Array("abcd")
 var testCase1_2 = Array("AAaaaa")
@@ -67,17 +68,8 @@ testCase1_3
 testCase1_4
 testCase1_5
 ```
-<!-- more -->
-#解法二：
+---
 
+**完整的解题目录：[Solutions for Cracking The Coding Interview Written in Swift]({% post_url 2014-11-23-solutions-for-cracking-the-coding-interview-written-in-swift %})**
 
-
-
-
-
-
-
-
-
-
-
+**全部代码托管在Github：[https://github.com/WyattZhang/CTCI](https://github.com/WyattZhang/CTCI)**
